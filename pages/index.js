@@ -1,8 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useSession } from "next-auth/react"
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const { data: session, status } = useSession()
+
+  console.log(session, status);
+
   return (
     <div className={styles.container}>
       <Head>
